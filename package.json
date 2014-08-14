@@ -1,0 +1,12 @@
+{
+  "name": "Chimera",
+  "main": "index.html",
+  "window": {
+    "title": "Chimera",
+    "toolbar": false,
+    "frame": true,
+    "width": 800,
+    "height": 500,
+    "position": "center"
+	}
+}

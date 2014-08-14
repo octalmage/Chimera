@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chimera</title>
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+
+	<!--<script src="text/javascript" src="jquery-2.1.1.min.js"></script>-->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="app.js"></script>
+
+	<!--<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>-->
+
+	<script type="text/javascript">
+
+	$(document).on("click", function(e)
+	{
+		//$(".one")[0].contentWindow.history.back(); 
+	});
+
+	</script>
+
+
+    <style type="text/css">
+
+	body
+	{
+		margin:0px;
+		padding: 0px;
+		height:100%;
+	}
+
+	iframe
+	{
+		width: 100%;
+		height: 100%;
+		border: none;
+		bottom: 0px;
+	}
+
+	.search
+	{
+		height:18px;
+		
+		position: absolute;
+		width:100%;
+	}
+
+	.one
+	{
+		position: absolute;
+		left:0px;
+		top:0px;
+	}
+
+	.two
+	{
+		position: absolute;
+		right:0px;
+		top:0px;
+	}
+
+	.wrap1
+	{
+		top:0px;
+		position: absolute;
+		height: 100%; 
+		width:50%;
+		left: 0px;
+	}
+
+	.wrap2
+	{
+		right:0px;
+		top:0px;
+		position: absolute;
+		height: 100%; 
+		width:50%; 
+	}
+
+    </style>
+  </head>
+  <body>
+
+<!--
+nwUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53"
+-->
+<div class="wrap1">
+	<!--<input type="text" id="search1" class="search" value="">-->
+	<iframe class="one" nwUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0" nwdisable nwfaketop src="http://wikipedia.com" ></iframe>
+</div>
+
+<div class="wrap2">
+	<!--<input type="text" id="search1" class="search" value="">-->
+	<iframe class="two" nwUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0" nwdisable nwfaketop src="http://docs.google.com" ></iframe>
+</div>
+
+</body>
+</html>
