@@ -1,10 +1,15 @@
 var gui = require('nw.gui');
 var win = gui.Window.get();
 
-//win.showDevTools();
+win.showDevTools();
 
+//TODO: Use this event to update the url faster. 
+/*win.on("document-start", function(f)
+{
+    console.log(f.id);
+})*/
 
-iPhoneUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0";
+    iPhoneUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0";
 
 	function Browser(name) 
 	{
@@ -34,7 +39,7 @@ iPhoneUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) Ap
     			$("#" + this.name + "Input").val(url);
     		}
     		$("." + this.name).attr("src", url);
-            //TODO: When a url is loaded remove all urls from history after the current point. 
+            //TODO: When a url is loaded remove all urls from history after the current point, but not when forward is pressed. 
             //this.history.splice(this.current, this.history.length-this.current);
             this.history.push(url);
             console.log(this.history);
@@ -52,8 +57,9 @@ iPhoneUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) Ap
     	}
     	this.forward = function()
     	{
-    		//TODO: Switch to managed history. 
-    		$("#" + this.name)[0].contentWindow.history.forward(); 
+            console.log(this.current + " " + this.history)
+    		this.current++;
+            this.load(this.history[this.current]);
     	}
     	this.init = function()
     	{
