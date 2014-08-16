@@ -5,21 +5,25 @@
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
 
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
 	<!--<script src="text/javascript" src="jquery-2.1.1.min.js"></script>-->
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+
+
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 	<script src="app.js"></script>
+	<script src="start.js"></script>
 
 	<!--<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>-->
-
-	<script type="text/javascript">
-
-	$(document).on("click", function(e)
-	{
-		//$(".one")[0].contentWindow.history.back(); 
-	});
-
-	</script>
 
 
     <style type="text/css">
@@ -29,12 +33,13 @@
 		margin:0px;
 		padding: 0px;
 		height:100%;
+		background-color: #c0c0c0;
 	}
 
 	iframe
 	{
-		width: 100%;
-		height: 100%;
+		
+		
 		border: none;
 		bottom: 0px;
 	}
@@ -49,16 +54,18 @@
 
 	.one
 	{
+		width: 100%;
 		position: absolute;
 		left:0px;
-		top:0px;
+		top:30px;
 	}
 
 	.two
 	{
 		position: absolute;
 		right:0px;
-		top:0px;
+		width: 100%;
+		top:30px;
 	}
 
 	.wrap1
@@ -87,13 +94,15 @@
 nwUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53"
 -->
 <div class="wrap1">
+<div id="BrowserOneGroup" style="display: inline-block"><button id="BrowserOneBack" type="button" class="btn btn-default btn-sm">Back</button><button id="BrowserOneForward" type="button" class="btn btn-default btn-sm">Forward</button><button type="button" class="btn btn-default btn-sm">Refresh</button></div><input id="BrowserOneInput">
 	<!--<input type="text" id="search1" class="search" value="">-->
-	<iframe class="one" nwUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0" nwdisable nwfaketop src="http://wikipedia.com" ></iframe>
+	<iframe id="BrowserOne" class="one BrowserOne" nwdisable nwfaketop ></iframe>
 </div>
 
 <div class="wrap2">
+<div id="BrowserTwoGroup" style="display: inline-block"><button id="BrowserTwoBack" type="button" class="btn btn-default btn-sm">Back</button><button id="BrowserTwoForward" type="button" class="btn btn-default btn-sm">Forward</button><button type="button" class="btn btn-default btn-sm">Refresh</button</button></div><input id="BrowserTwoInput">
 	<!--<input type="text" id="search1" class="search" value="">-->
-	<iframe class="two" nwUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0" nwdisable nwfaketop src="http://docs.google.com" ></iframe>
+	<iframe id="BrowserTwo" class="two BrowserTwo" nwdisable nwfaketop ></iframe>
 </div>
 
 </body>
