@@ -1,0 +1,57 @@
+body
+	{
+		margin:0px;
+		padding: 0px;
+		height:100%;
+		background-color: #c0c0c0;
+	}
+
+	iframe
+	{
+		
+		
+		border: none;
+		bottom: 0px;
+	}
+
+	.search
+	{
+		height:18px;
+		
+		position: absolute;
+		width:100%;
+	}
+
+	.one
+	{
+		width: 100%;
+		position: absolute;
+		left:0px;
+		top:30px;
+	}
+
+	.two
+	{
+		position: absolute;
+		right:0px;
+		width: 100%;
+		top:30px;
+	}
+
+	.wrap1
+	{
+		top:0px;
+		position: absolute;
+		height: 100%; 
+		width:50%;
+		left: 0px;
+	}
+
+	.wrap2
+	{
+		right:0px;
+		top:0px;
+		position: absolute;
+		height: 100%; 
+		width:50%; 
+	}
