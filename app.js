@@ -3,11 +3,41 @@ var win = gui.Window.get();
 
 win.showDevTools();
 
+block=0;
+
 //TODO: Use this event to update the url faster. 
-/*win.on("document-start", function(f)
+win.on("document-start", function(f)
 {
-    console.log(f.id);
-})*/
+    if (BrowserOne.mode!="mobilewidth")
+    {
+        return;
+    }
+    if (f.id=="BrowserOne")
+    {
+        if (block==0)
+        {
+             $("#BrowserTwo").attr("src", f.src);
+             block=1;
+        }
+        else
+        {
+            block=0;
+        }
+       
+    }
+    else if (f.id=="BrowserTwo")
+    {
+        if (block==0)
+        {
+             $("#BrowserOne").attr("src", f.src);
+             block=1;
+        }
+        else
+        {
+            block=0;
+        }
+    }
+})
 
     iPhoneUserAgent="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0";
 
@@ -16,6 +46,7 @@ win.showDevTools();
     	this.name = name;
         this.history = [];
         this.current=0;
+        this.mode="split";
     	this.SwitchUserAgent = function(type)
     	{
     		if (type=="mobile")
@@ -90,9 +121,38 @@ win.showDevTools();
     		});
 			this.resize();
     	}
+        this.switchMode = function(mode)
+        {
+            if (mode=="mobilewidth")
+            {   
+                if(this.name=="BrowserOne")
+                {
+                    $("#" + this.name).css("width", "320px");
+                }
+                else
+                {
+                    this.resize();
+                }
+                
+                this.mode="mobilewidth";
+            }
+        }
     	this.resize = function()
     	{
-    		$("." + this.name).css("height", window.innerHeight-30);
+            if (this.mode=="split")
+            {
+                
+            }
+            else if (this.mode=="mobilewidth")
+            {   
+                
+                if ($("#" + this.name).css("width")!="320px")
+                {
+                    $("#" + this.name).css("width", window.innerWidth-320)
+                    
+                }
+            }
+            $("#" + this.name).css("height", window.innerHeight-30);
     		$("#" + this.name + "Input").css("width", (window.innerWidth/2)-parseInt($("#" + this.name + "Group").css("width")));
     	};
 	}
