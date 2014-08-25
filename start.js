@@ -1,13 +1,15 @@
 	
 	$(document).on("ready", function(e)
 	{	
-		BrowserOne.init();
-		BrowserTwo.init();
+		
 
 		BrowserOne.SwitchUserAgent("mobile");
 
 		BrowserOne.switchMode("mobilewidth");
 		BrowserTwo.switchMode("mobilewidth");
+
+		BrowserOne.init();
+		BrowserTwo.init();
 
 		BrowserOne.load("http://google.com");
 		BrowserTwo.load("http://google.com");
@@ -17,6 +19,6 @@
 
 	$( window ).resize(function() 
 	{
-		BrowserOne.resize()
+		BrowserOne.resize();
 		BrowserTwo.resize();
 	})
