@@ -21,7 +21,7 @@ win.on("document-start", function(f)
     {
         if (block==0)
         {
-             $("#BrowserTwo").attr("src", f.src);
+             //$("#BrowserTwo").attr("src", f.src);
              block=1;
         }
         else
@@ -34,8 +34,8 @@ win.on("document-start", function(f)
     {
         if (block==0)
         {
-             $("#BrowserOne").attr("src", f.src);
-             block=1;
+            //$("#BrowserOne").attr("src", f.src);
+            block=1;
         }
         else
         {
