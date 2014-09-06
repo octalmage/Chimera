@@ -1,5 +1,4 @@
-Chimera
-=======
+![](https://cloudup.com/cIYSLYhFugl+)
 
 Split screen browser with optional mobile emulation. 
 
